@@ -56,6 +56,25 @@ namespace Features
             {
                 Console.WriteLine(item.Name);
             }
+            Console.WriteLine("****Another lambda method****");
+            // Lambda method
+            foreach (var item in sales.Where(e => e.Name.Length == 4)
+                                      .OrderBy(e => e.Name))
+            {
+                Console.WriteLine(item.Name);
+            }
+
+            Console.WriteLine("****Func types and action types****");
+            //Func type that takes an integer and returns an integer 
+            Func<int, int> square = x => x * x;
+            //Func type that takes two integers and returns an integer 
+            Func<int, int, int> add = (x, y) =>
+            {
+                return x + y;
+            };
+            // Action type that takes an integer and returns a void, as always
+            Action<int> write = x => Console.WriteLine(x);
+            write(square(add(3, 2)));        
         }
         private static bool NameStatsWithR(Employee employee)
         {
