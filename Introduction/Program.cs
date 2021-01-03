@@ -11,9 +11,22 @@ namespace Introduction
         static void Main(string[] args)
         {
             string path = @"C:\Windows";
+            Console.WriteLine("****Show large files without linq****");
             ShowLargeFilesWithoutLinq(path);
-            Console.WriteLine("*******");
+            Console.WriteLine("****Show large files with linq****");
             ShowLargeFilesWithLinq(path);
+        }
+        private static void ShowLargeFilesWithoutLinq(string path)
+        {
+            var directoryInfo = new DirectoryInfo(path);
+            var fileInfoArray = directoryInfo.GetFiles();
+            Array.Sort(fileInfoArray, new FileInfoComparer());
+
+            for (int i = 0; i < 5; i++)
+            {
+                var fileInfo = fileInfoArray[i];
+                Console.WriteLine($"{fileInfo.Name,-20} : {fileInfo.Length,-10:N0}");
+            }
         }
 
         private static void ShowLargeFilesWithLinq(string path)
@@ -25,30 +38,6 @@ namespace Introduction
             foreach (var fileInfo in query)
             {
                 Console.WriteLine($"{fileInfo.Name,-20} : {fileInfo.Length,-10:N0}");
-            }
-
-            /*
-            var query = from file in new DirectoryInfo(path).GetFiles()
-                        orderby file.Length descending
-                        select file;
-
-            foreach (var fileInfo in query.Take(5))
-            {
-                Console.WriteLine($"{fileInfo.Name,-20} : {fileInfo.Length,-10:N0}");
-            }
-            */
-        }
-
-        private static void ShowLargeFilesWithoutLinq(string path)
-        {
-            var directoryInfo = new DirectoryInfo(path);
-            var fileInfoArray = directoryInfo.GetFiles();
-            Array.Sort(fileInfoArray, new FileInfoComparer());
-
-            for (int i = 0; i < 5; i++)
-            {
-                var fileInfo = fileInfoArray[i];
-                Console.WriteLine($"{fileInfo.Name, -20} : {fileInfo.Length, -10:N0}");
             }
         }
 
