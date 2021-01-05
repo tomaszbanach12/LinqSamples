@@ -34,7 +34,8 @@ namespace Features
 
             Console.WriteLine("****Named method****");
             // Named method
-            foreach (var item in sales.Where(NameStatsWithR))
+            var query = sales.Where(NameStatsWithR);
+            foreach (var item in query)
             {
                 Console.WriteLine(item.Name);
             }
@@ -52,14 +53,16 @@ namespace Features
 
             Console.WriteLine("****Lambda method****");
             // Lambda method
-            foreach (var item in sales.Where(e => e.Name.StartsWith('L')))
+            query = sales.Where(e => e.Name.StartsWith('L'));
+            foreach (var item in query)
             {
                 Console.WriteLine(item.Name);
             }
             Console.WriteLine("****Another lambda method****");
             // Lambda method
-            foreach (var item in sales.Where(e => e.Name.Length == 4)
-                                      .OrderBy(e => e.Name))
+            query = sales.Where(e => e.Name.Length == 4)
+                             .OrderBy(e => e.Name);
+            foreach (var item in query)
             {
                 Console.WriteLine(item.Name);
             }
