@@ -58,13 +58,24 @@ namespace Features
             {
                 Console.WriteLine(item.Name);
             }
-            Console.WriteLine("****Another lambda method****");
-            // Lambda method
-            query = sales.Where(e => e.Name.Length == 4)
-                             .OrderBy(e => e.Name);
-            foreach (var item in query)
+            Console.WriteLine("****Extension method syntax****");
+            // Method syntax
+            var extensionMethodSyntax = sales.Where(e => e.Name.Length == 4)    // Number 1
+                                    .OrderByDescending(e => e.Name)                       // Number 2
+                                    .Select(e => e);                            // Number 3
+            foreach (var item in extensionMethodSyntax)
             {
                 Console.WriteLine(item.Name);
+            }
+
+            Console.WriteLine("****Query syntax****");
+            var querySyntax = from sale in sales                    
+                              where sale.Name.Length == 4                       // do the same as number 1     
+                              orderby sale.Name descending                      // do the same as number 2
+                              select sale;                                      // do the same as number 3
+            foreach (var sale in querySyntax)
+            {
+                Console.WriteLine(sale.Name);
             }
 
             Console.WriteLine("****Func types and action types****");
