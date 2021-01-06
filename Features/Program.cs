@@ -61,7 +61,7 @@ namespace Features
             Console.WriteLine("****Extension method syntax****");
             // Method syntax
             var extensionMethodSyntax = sales.Where(e => e.Name.Length == 4)    // Number 1
-                                    .OrderByDescending(e => e.Name)                       // Number 2
+                                    .OrderByDescending(e => e.Name)             // Number 2
                                     .Select(e => e);                            // Number 3
             foreach (var item in extensionMethodSyntax)
             {
@@ -69,6 +69,9 @@ namespace Features
             }
 
             Console.WriteLine("****Query syntax****");
+            // Query syntax
+            // Always starts with [from] word
+            // Always ends with [select] or [group] words
             var querySyntax = from sale in sales                    
                               where sale.Name.Length == 4                       // do the same as number 1     
                               orderby sale.Name descending                      // do the same as number 2
