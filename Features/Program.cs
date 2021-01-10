@@ -59,7 +59,7 @@ namespace Features
                 Console.WriteLine(item.Name);
             }
             Console.WriteLine("****Extension method syntax****");
-            // Method syntax
+            // Extension method syntax
             var extensionMethodSyntax = sales.Where(e => e.Name.Length == 4)    // Number 1
                                     .OrderByDescending(e => e.Name)             // Number 2
                                     .Select(e => e);                            // Number 3
