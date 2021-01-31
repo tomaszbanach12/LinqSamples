@@ -8,9 +8,9 @@ namespace Cars
         public static void LinqOnCars()
         {
             Console.WriteLine("****LINQ ON CARS****");
+
             Console.WriteLine("****Show 15 car names with extension method syntax****");
             var cars = ProcessMethods.ProcessCarFileByExtensionMethod("fuel.csv");
-
             foreach (var car in cars.Take(15))
             {
                 Console.WriteLine(car.Name);
