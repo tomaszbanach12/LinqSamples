@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Cars
 {
-    class CarProgram
+    class CarsProgram
     {
         public static void LinqOnCars()
         {

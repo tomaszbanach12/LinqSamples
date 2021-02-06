@@ -9,9 +9,9 @@ namespace Cars
     {
         static void Main(string[] args)
         {
-            CarProgram.LinqOnCars();
+            CarsProgram.LinqOnCars();
 
-            ManufacturerProgram.LinqOnManufacturers();
+            CarsAndManufacturersProgram.LinqOnCarsAndManufacturers();
         }
     }
 }
