@@ -12,6 +12,8 @@ namespace Cars
             CarsProgram.LinqOnCars();
 
             CarsAndManufacturersProgram.LinqOnCarsAndManufacturers();
+
+            XmlProgram.LinqWithXml();
         }
     }
 }
