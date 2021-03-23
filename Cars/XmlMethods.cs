@@ -7,6 +7,17 @@ namespace Cars
 {
     public static class XmlMethods
     {
+        public static void GetXmlAttributeByQueryMethod(string path, string manufacturer)
+        {
+            var document = XDocument.Load(path);
+
+            var query =
+                from element in document.Element("Cars").Elements("Car")
+                where element.Attribute("Manufacturer").Value == manufacturer
+                select element.Attribute("Name");
+        }
+
+
         public static void CreateXmlByForeachMethod(List<Car> records, string path)
         {
             var document = new XDocument();
