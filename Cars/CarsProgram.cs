@@ -27,9 +27,9 @@ namespace Cars
             Console.WriteLine("****Finding the top 10 most fuel efficent cars with extension method syntax****");
             var query =
                 cars.OrderByDescending(c => c.Combined)
-                    .ThenBy(c => c.Name);
+                    .ThenBy(c => c.Name).Take(10);
 
-            foreach (var car in query.Take(10))
+            foreach (var car in query)
             {
                 Console.WriteLine($"{car.Name}: {car.Combined}");
             }
@@ -49,9 +49,9 @@ namespace Cars
             query =
                 cars.Where(c => c.Manufacturer == "BMW" && c.Year == 2016)
                     .OrderByDescending(c => c.Combined)
-                    .ThenBy(c => c.Name);
+                    .ThenBy(c => c.Name).Take(10);
 
-            foreach (var car in query.Take(10))
+            foreach (var car in query)
             {
                 Console.WriteLine($"{car.Manufacturer} {car.Name}: {car.Combined}");
             }
@@ -121,17 +121,17 @@ namespace Cars
                     c.Manufacturer,
                     c.Name,
                     c.Combined
-                });
+                }).Take(15);
 
-            foreach (var car in query.Take(15))
+            foreach (var car in query)
             {
                 Console.WriteLine($"{car.Manufacturer} {car.Name}: {car.Combined}");
             }
 
             Console.WriteLine("****Show 2 car names and split it by characters by two foreach loops****");
-            var queryTwoLoops = cars.Select(c => c.Name);
+            var queryTwoLoops = cars.Select(c => c.Name).Take(2);
 
-            foreach (var name in queryTwoLoops.Take(2))
+            foreach (var name in queryTwoLoops)
             {
                 foreach (var character in name)
                 {
