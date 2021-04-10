@@ -81,9 +81,9 @@ namespace LinqSamples.Resources
             }
 
             Console.WriteLine("****Func types and action types****");
-            //Func type that takes an integer and returns an integer 
+            // Func type that takes an integer and returns an integer 
             Func<int, int> square = x => x * x;
-            //Func type that takes two integers and returns an integer 
+            // Func type that takes two integers and returns an integer 
             Func<int, int, int> add = (x, y) =>
             {
                 return x + y;

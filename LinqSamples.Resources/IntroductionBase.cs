@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 
@@ -8,8 +6,11 @@ namespace LinqSamples.Resources
 {
     public class IntroductionBase
     {
-        public static void ShowLargeFilesWithoutLinq(string path)
+        public static void ShowLargeFiles()
         {
+            string path = @"C:\Windows";
+
+            Console.WriteLine("****Show large files without linq****");
             var directoryInfo = new DirectoryInfo(path);
             var fileInfoArray = directoryInfo.GetFiles();
             Array.Sort(fileInfoArray, new FileInfoComparer());
@@ -19,10 +20,8 @@ namespace LinqSamples.Resources
                 var fileInfo = fileInfoArray[i];
                 Console.WriteLine($"{fileInfo.Name,-20} : {fileInfo.Length,-10:N0}");
             }
-        }
 
-        public static void ShowLargeFilesWithLinq(string path)
-        {
+            Console.WriteLine("****Show large files with linq****");
             var query = new DirectoryInfo(path).GetFiles()
                         .OrderByDescending(f => f.Length)
                         .Take(5);
@@ -32,13 +31,15 @@ namespace LinqSamples.Resources
                 Console.WriteLine($"{fileInfo.Name,-20} : {fileInfo.Length,-10:N0}");
             }
         }
-    }
 
-    public class FileInfoComparer : IComparer<FileInfo>
-    {
-        public int Compare([AllowNull] FileInfo x, [AllowNull] FileInfo y)
+        public static void ShowLargeFilesWithoutLinq(string path)
         {
-            return y.Length.CompareTo(x.Length);
+
+        }
+
+        public static void ShowLargeFilesWithLinq(string path)
+        {
+
         }
     }
 }
