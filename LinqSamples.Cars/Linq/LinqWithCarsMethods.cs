@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace LinqSamples.Cars
 {
-    public static class ProcessMethods
+    public static class LinqWithCarsMethods
     {
         public static List<Car> ProcessCarFileByExtensionMethod(string path)
         {

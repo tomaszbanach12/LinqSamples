@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace LinqSamples.Cars
 {
-    public static class XmlMethods
+    public static class LinqWithXmlMethods
     {
         public static void CreateXmlByForeachMethod(List<Car> records, string path)
         {

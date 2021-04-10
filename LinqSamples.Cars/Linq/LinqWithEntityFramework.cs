@@ -9,7 +9,7 @@ namespace LinqSamples.Cars
         {
             Console.WriteLine("****Inserting data into Cars table with extension method syntax****");
 
-            var cars = ProcessMethods.ProcessCarFileByExtensionMethod("fuel.csv");
+            var cars = LinqWithCarsMethods.ProcessCarFileByExtensionMethod("fuel.csv");
             var appDBContext = new AppDbContext();
 
             foreach (var car in cars)

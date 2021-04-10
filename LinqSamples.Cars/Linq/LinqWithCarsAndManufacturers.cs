@@ -12,8 +12,8 @@ namespace LinqSamples.Cars
             Console.WriteLine("****LINQ ON MANUFACTURERS****");
 
             Console.WriteLine("****Finding the top 10 most fuel efficent cars and thier headquaters with join data with query method syntax****");
-            var cars = ProcessMethods.ProcessCarFileByExtensionMethod("fuel.csv");
-            var manufacturers = ProcessMethods.ProcessManufacturersFileByExtensionMethod("manufacturers.csv");
+            var cars = LinqWithCarsMethods.ProcessCarFileByExtensionMethod("fuel.csv");
+            var manufacturers = LinqWithCarsMethods.ProcessManufacturersFileByExtensionMethod("manufacturers.csv");
 
             var query =
                 from car in cars

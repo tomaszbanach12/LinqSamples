@@ -10,14 +10,14 @@ namespace LinqSamples.Cars
             Console.WriteLine("****LINQ ON CARS****");
 
             Console.WriteLine("****Show 15 car names with extension method syntax****");
-            var cars = ProcessMethods.ProcessCarFileByExtensionMethod("fuel.csv");
+            var cars = LinqWithCarsMethods.ProcessCarFileByExtensionMethod("fuel.csv");
             foreach (var car in cars.Take(15))
             {
                 Console.WriteLine(car.Name);
             }
 
             Console.WriteLine("****Show 15 car names with query method syntax****");
-            cars = ProcessMethods.ProcessCarFileByQueryMethod("fuel.csv");
+            cars = LinqWithCarsMethods.ProcessCarFileByQueryMethod("fuel.csv");
 
             foreach (var car in cars.Take(15))
             {
@@ -90,7 +90,7 @@ namespace LinqSamples.Cars
             Console.WriteLine(isCarBMWProducedIn2016);
 
             Console.WriteLine("****Show 15 car names with custom extension method ToCar****");
-            cars = ProcessMethods.ProcessCarFileByExtensionMethodCalledToCar("fuel.csv");
+            cars = LinqWithCarsMethods.ProcessCarFileByExtensionMethodCalledToCar("fuel.csv");
 
             foreach (var car in cars.Take(15))
             {
