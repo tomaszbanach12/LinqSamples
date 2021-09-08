@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LinqSamples.Cars.Linq;
+using System;
 using System.Linq.Expressions;
 
 namespace LinqSamples.Cars
@@ -22,6 +23,8 @@ namespace LinqSamples.Cars
             LinqWithEntityFramework.LinqWithManufacturerWithExtensionMethodSyntax();
 
             LinqWithIQueryablesAndExpressionTrees.IQueryablesAndExpressionTrees();
+
+            LinqWithCaveatsAndPitfalls.LinqOnCaveatsAndPitfalls();
         }
     }
 }
