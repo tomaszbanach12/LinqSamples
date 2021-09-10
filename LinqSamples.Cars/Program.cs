@@ -25,6 +25,8 @@ namespace LinqSamples.Cars
             LinqWithIQueryablesAndExpressionTrees.IQueryablesAndExpressionTrees();
 
             LinqWithCaveatsAndPitfalls.LinqOnCaveatsAndPitfalls();
+
+            LinqWithAdvancedLinqQuery.LinqOnAdvancedLinqQuery();
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace LinqSamples.Cars.Linq
 {
@@ -66,12 +64,12 @@ namespace LinqSamples.Cars.Linq
 
             Console.WriteLine("****Finding the top 10 most fuel efficent cars with extension method syntax with subquery (example how to use)****");
             var query2 = appDBContext.Cars
-                .Where(c => c.Manufacturer == "BMW")   
-                .OrderByDescending(c => c.Combined)     
+                .Where(c => c.Manufacturer == "BMW")
+                .OrderByDescending(c => c.Combined)
                 .ThenBy(c => c.Name)
                 .Take(10)
                 .Select(c => new { Name = c.Name.ToUpper(), Combined = c.Combined })
-                .ToList();                              
+                .ToList();
 
             foreach (var car in query2)
             {
